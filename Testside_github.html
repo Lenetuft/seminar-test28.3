@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testside_github</title>
 </head>
 
- <body>
-        <button onclick="fetchData()">Fetch Data from API</button>
-        <script>
-    
+<body>
+    <h2 id="Overskrift1">Dette er en Test overskrift</h2>
+    <button onclick="endreOverskrift()">Endre Overskrift</button>
+
+    <button onclick="fetchData()">Fetch Data from API</button>
+    <script>
+        function endreOverskrift() {
+            document.getElementById('Overskrift1').innerHTML = "Dette er en Test!!!"
+        }
+
+
         function fetchData() {
             fetch('http://randomuser.me/api/')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-            })
-    
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                })
+
         }
-        </script>
+    </script>
 </body>
+
 </html>
